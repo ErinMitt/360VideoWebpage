@@ -1014,20 +1014,20 @@ VideoPlayer:
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 3
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://r4---sn-bvvbax-cvnl.googlevideo.com/videoplayback?expire=1610073520&ei=T3H3X8vRPMu5gwPEz6SwCQ&ip=2601:197:a7f:aee0:f929:61b4:e95e:873b&id=o-AAHurxLR-8Bem9L7UbondXH_IXYc2EN8Hz-UFu8_eI1l&itag=22&source=youtube&requiressl=yes&mh=mu&mm=31,29&mn=sn-bvvbax-cvnl,sn-ab5szn7z&ms=au,rdu&mv=m&mvi=4&pl=34&initcwndbps=2333750&vprv=1&mime=video/mp4&ns=l1dTTsnXdxLlxW5cr_zhzUEF&ratebypass=yes&dur=227.044&lmt=1555975759982740&mt=1610051555&fvip=4&c=WEB&txp=2206222&n=mNbVFAu9Q3CWbmMNT&sparams=expire,ei,ip,id,itag,source,requiressl,vprv,mime,ns,ratebypass,dur,lmt&sig=AOq0QJ8wRgIhAKJLCCFVK-sskE4gA2nL_-X1ji1dar8N8uqCIj2ajan0AiEA7QeT4xfc8b9LYPNnelNVlcJSS2NnSSDWawRTYZnWMLc=&lsparams=mh,mm,mn,ms,mv,mvi,pl,initcwndbps&lsig=AG3C_xAwRgIhAKNQzK8mKr3cxACE8co2LvIdaXmRsNcjeUAXP0WkV7U2AiEA7kvAJu92wGwCVa3osG0HefXGul9o0KMzewVH_c55EBE=
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
 --- !u!135 &2116625482
