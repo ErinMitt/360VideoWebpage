@@ -22,6 +22,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/360VideoSphere.unity:
@@ -63,6 +64,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12214}
     - Class: 114
       Script: {instanceID: 12370}
+    - Class: 114
+      Script: {instanceID: 12404}
     - Class: 114
       Script: {instanceID: 12694}
     - Class: 114
@@ -529,5 +532,4 @@ ScriptsOnlyBuild:
   platform: 20
   scenePathNames:
   - Assets/360VideoSphere.unity
-  playerPath: /Users/erinmittmann/Desktop/jobs/Discovery Lab Job/360 video unity
-    project/360vdeoNewInstructons/New Unity Project/webgltest01071609
+  playerPath: /Users/erinmittmann/Documents/GitHub/erinmitt.github.io/360videoProject/testwebgl01171213

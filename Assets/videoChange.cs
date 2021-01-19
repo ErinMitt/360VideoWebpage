@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.UI;
 
 public class videoChange : MonoBehaviour
 {
@@ -12,67 +13,37 @@ public class videoChange : MonoBehaviour
     public UnityEngine.Video.VideoClip newVideo5;
     public GameObject ForwardButton;
     public GameObject BackButton;
-    int currentVideo = 1;
+    public GameObject EnterButton;
+    int currentVideo = -1;
     public GameObject text;
+    public InputField mainInputField;
+    public List<string> videos = new List<string>();
 
-
+public void VideoAssigned(){
+    videos.Add(mainInputField.text);
+}
     public UnityEngine.Video.VideoAudioOutputMode audioOutputMode;
 
     public void ButtonForward()
     {
+        if(currentVideo<videos.Count){
+            if(currentVideo==0){
+            BackButton.SetActive(true);    
+            }
+        currentVideo++;
         var videoPlayer = gameObject.GetComponent<VideoPlayer>();
-
-        if (currentVideo == 1)
-        {
-            videoPlayer.clip = newVideo2;
-            text.SetActive(false);
-            currentVideo = 2;
-            BackButton.SetActive(true);
+videoPlayer.url = System.IO.Path.Combine (Application.streamingAssetsPath,videos[currentVideo]);
         }
-        else if (currentVideo == 2)
-        {
-            videoPlayer.clip = newVideo3;
-            currentVideo = 3;
-        }
-        else if (currentVideo == 3)
-        {
-            videoPlayer.clip = newVideo4;
-            currentVideo = 4;
-        }
-        else if (currentVideo == 4)
-        {
-            videoPlayer.clip = newVideo5;
-            currentVideo = 5;
-            ForwardButton.SetActive(false);
-        }
-        videoPlayer.renderMode = UnityEngine.Video.VideoRenderMode.MaterialOverride;
     }
     public void ButtonBackward()
     {
+           if(currentVideo<videos.Count){
+           /* if(currentVideo==0){
+            BackButton.SetActive(true);    
+            }*/
+        currentVideo--;
         var videoPlayer = gameObject.GetComponent<VideoPlayer>();
-
-        if (currentVideo == 5)
-        {
-            videoPlayer.clip = newVideo4;
-            currentVideo = 4;
-            ForwardButton.SetActive(true);
+videoPlayer.url = System.IO.Path.Combine (Application.streamingAssetsPath,videos[currentVideo]);
         }
-        else if (currentVideo == 4)
-        {
-            videoPlayer.clip = newVideo3;
-            currentVideo = 3;
-        }
-        else if (currentVideo == 3)
-        {
-            videoPlayer.clip = newVideo2;
-            currentVideo = 2;
-        }
-        else if (currentVideo == 2)
-        {
-            videoPlayer.clip = newVideo1;
-            currentVideo = 1;
-            BackButton.SetActive(false);
-        }
-        videoPlayer.renderMode = UnityEngine.Video.VideoRenderMode.MaterialOverride;
     }
 }
