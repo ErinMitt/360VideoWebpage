@@ -21,10 +21,15 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/360VideoSphere.unity:
     - Class: 1
@@ -56,11 +61,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11406}
     - Class: 114
+      Script: {instanceID: 11408}
+    - Class: 114
       Script: {instanceID: 11446}
+    - Class: 114
+      Script: {instanceID: 11746}
     - Class: 114
       Script: {instanceID: 11834}
     - Class: 114
       Script: {instanceID: 11924}
+    - Class: 114
+      Script: {instanceID: 12026}
     - Class: 114
       Script: {instanceID: 12216}
     - Class: 114
@@ -72,7 +83,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12886}
     - Class: 114
+      Script: {instanceID: 13036}
+    - Class: 114
       Script: {instanceID: 13048}
+    - Class: 114
+      Script: {instanceID: 13062}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -354,7 +369,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: e26d7c685f3dd77c73544551475cc417
+      Hash: e578dce58c3117d2d0bac11b2f3178d1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: videoChange
@@ -547,4 +562,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/360VideoSphere.unity
-  playerPath: C:/Users/Student/Desktop/current 360 build test/New Unity Project.exe
+  playerPath: C:/Users/Student/Desktop/clips appear 03262021/New Unity Project.exe
