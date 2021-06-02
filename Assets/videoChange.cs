@@ -29,6 +29,7 @@ public class videoChange : MonoBehaviour
     public Text[] videoNames;
     public void Start()
     {
+        //add a check when a clip is added to check if the forward button needs to be visible
         while (PlayerPrefs.GetString(clipNum.ToString()) != "")
         {
             Debug.Log(PlayerPrefs.GetString(clipNum.ToString()));
@@ -46,8 +47,6 @@ public class videoChange : MonoBehaviour
             delete = charButtons[clipNum];
             clipNum++;
         }
-        //iterate through player prefs and print out all strings
-
         //textlist.text = PlayerPrefs.GetString(currentVideo.ToString());
         Debug.Log(PlayerPrefs.GetString("0"));
     }
@@ -94,21 +93,26 @@ public class videoChange : MonoBehaviour
 
     public void ButtonForward()
     {
-        Debug.Log("forward");
-     
-            if(currentVideo==-1){
-            BackButton.SetActive(true);    
-            }
         currentVideo++;
-        var videoPlayer = gameObject.GetComponent<VideoPlayer>();
+        if (PlayerPrefs.GetString(currentVideo.ToString()) != "")
+        {
+            if (currentVideo == 0)
+            {
+                BackButton.SetActive(true);
+            }
+            currentVideo++;
+            var videoPlayer = gameObject.GetComponent<VideoPlayer>();
             stringToSave = PlayerPrefs.GetString(currentVideo.ToString());
             videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, PlayerPrefs.GetString(currentVideo.ToString()));
-           
-        if (currentVideo == clipNum)
-        {
-            ForwardButton.SetActive(false);
+            if (currentVideo == clipNum)
+            {
+                ForwardButton.SetActive(false);
+            }
         }
-        //make dissapear at max, appear if at max when adding new video
+        else
+        {
+            currentVideo--;
+        }
     }
     public void ButtonBackward()
     {
@@ -149,6 +153,10 @@ public class videoChange : MonoBehaviour
         if (currentVideo == clipNum)
         {
             ForwardButton.SetActive(false);
+        }
+        if (currentVideo == 0)
+        {
+            BackButton.SetActive(false);
         }
 
     }
