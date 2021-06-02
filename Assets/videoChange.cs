@@ -80,6 +80,7 @@ public class videoChange : MonoBehaviour
             clipNames[clipNum].GetComponentInChildren<Text>().text = stringToSave;
             clip = clipNames[clipNum];
             delete = charButtons[clipNum];
+            
 
             clipNum++;
             if (currentVideo == clipNum-1)

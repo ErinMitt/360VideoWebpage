@@ -9,11 +9,12 @@ public class lauchmodes : MonoBehaviour
     public GameObject IntroModeScene;
     public void EditMode()
     {
-        EditModeScene.SetActive(true);
+        ViewModeScene.SetActive(true);
         IntroModeScene.SetActive(false);
     }
     public void ViewMode()
     {
+        EditModeScene.SetActive(false);
         ViewModeScene.SetActive(true);
         IntroModeScene.SetActive(false);
     }
