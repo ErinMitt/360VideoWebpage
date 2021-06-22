@@ -96,14 +96,15 @@ public class videoChange : MonoBehaviour
         currentVideo++;
         if (PlayerPrefs.GetString(currentVideo.ToString()) != "")
         {
-            if (currentVideo == 0)
+            
+            if (currentVideo == 1)
             {
                 BackButton.SetActive(true);
             }
             var videoPlayer = gameObject.GetComponent<VideoPlayer>();
             stringToSave = PlayerPrefs.GetString(currentVideo.ToString());
             videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, PlayerPrefs.GetString(currentVideo.ToString()));
-            if (currentVideo == clipNum)
+            if (currentVideo == clipNum-1)
             {
                 ForwardButton.SetActive(false);
             }
@@ -123,7 +124,7 @@ public class videoChange : MonoBehaviour
         var videoPlayer = gameObject.GetComponent<VideoPlayer>();
         stringToSave = PlayerPrefs.GetString(currentVideo.ToString());
             videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, stringToSave);
-            if (currentVideo != clipNum)
+            if (currentVideo != clipNum-1)
             {
                 ForwardButton.SetActive(true);
             }

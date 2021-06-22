@@ -2710,7 +2710,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314788761}
   m_LocalRotation: {x: 0.002918592, y: -0.56926477, z: -0.0020208708, w: 0.82214665}
-  m_LocalPosition: {x: 0, y: 0, z: -125}
+  m_LocalPosition: {x: 0, y: 0, z: -141}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 860039654}
@@ -2719,7 +2719,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0.143, y: -69.399, z: -0.381}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -365, y: 1}
+  m_AnchoredPosition: {x: -322.6, y: 1.1}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1360827614
@@ -3014,6 +3014,7 @@ GameObject:
   - component: {fileID: 1621542746}
   - component: {fileID: 1621542745}
   - component: {fileID: 1621542744}
+  - component: {fileID: 1621542742}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -3036,6 +3037,25 @@ Transform:
   m_Father: {fileID: 1652918110}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1621542742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621542740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7448815bd5148434682b3d931066cd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RigBaseGameObject: {fileID: 1621542740}
+  m_CameraFloorOffsetObject: {fileID: 0}
+  m_CameraGameObject: {fileID: 0}
+  m_RequestedTrackingOriginMode: 0
+  m_CameraYOffset: 1.36144
+  m_TrackingSpace: 3
+  m_TrackingOriginMode: -2147483648
 --- !u!135 &1621542744
 SphereCollider:
   m_ObjectHideFlags: 0
