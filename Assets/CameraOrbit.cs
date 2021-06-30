@@ -32,6 +32,7 @@ public class CameraOrbit : MonoBehaviour
 
             // Left Mouse to Orbit
             if (Input.GetMouseButton(0))
+            
             {
                 transform.RotateAround(targetPosition, Vector3.up, Input.GetAxis("Mouse X") * orbitSpeed);
                 float pitchAngle = Vector3.Angle(Vector3.up, transform.forward);

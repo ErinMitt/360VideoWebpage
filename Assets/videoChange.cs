@@ -43,8 +43,8 @@ public class videoChange : MonoBehaviour
             clipNames[clipNum].transform.localPosition = new Vector3(transform.localPosition.x - 80, transform.localPosition.y + 60 - (clipNum * 20), transform.localPosition.z + 30);
             charButtons[clipNum].transform.localPosition = new Vector3(transform.localPosition.x + 20, transform.localPosition.y + 60 - (clipNum * 20), transform.localPosition.z + 30);
             clipNames[clipNum].GetComponentInChildren<Text>().text = PlayerPrefs.GetString(clipNum.ToString()) ;
-            clip = clipNames[clipNum];
-            delete = charButtons[clipNum];
+            //clip = clipNames[clipNum];
+           // delete = charButtons[clipNum];
             clipNum++;
         }
         //textlist.text = PlayerPrefs.GetString(currentVideo.ToString());
@@ -96,15 +96,15 @@ public class videoChange : MonoBehaviour
         currentVideo++;
         if (PlayerPrefs.GetString(currentVideo.ToString()) != "")
         {
-            if (currentVideo == 0)
+            
+            if (currentVideo == 1)
             {
                 BackButton.SetActive(true);
             }
-            currentVideo++;
             var videoPlayer = gameObject.GetComponent<VideoPlayer>();
             stringToSave = PlayerPrefs.GetString(currentVideo.ToString());
             videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, PlayerPrefs.GetString(currentVideo.ToString()));
-            if (currentVideo == clipNum)
+            if (currentVideo == clipNum-1)
             {
                 ForwardButton.SetActive(false);
             }
@@ -124,7 +124,7 @@ public class videoChange : MonoBehaviour
         var videoPlayer = gameObject.GetComponent<VideoPlayer>();
         stringToSave = PlayerPrefs.GetString(currentVideo.ToString());
             videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, stringToSave);
-            if (currentVideo != clipNum)
+            if (currentVideo != clipNum-1)
             {
                 ForwardButton.SetActive(true);
             }
