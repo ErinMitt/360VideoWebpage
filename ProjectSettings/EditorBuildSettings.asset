@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/360VideoSphere.unity
     guid: daea581c09e144bbdba30032334736e0
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 310e2a4104ffc3944b54d87615507979,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c953dc209b2184445ba9a49b2ff48662,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 6baf48dde84ea4a4c8700a94d0261da8,
+      type: 2}

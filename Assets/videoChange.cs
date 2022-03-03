@@ -25,6 +25,7 @@ public class videoChange : MonoBehaviour
     public Button delete;
     public Button clip;
     public Button[] clipNames;
+    public VideoClip[] videoInputs;
     public Button[] charButtons;
     public Text[] videoNames;
     public void Start()
@@ -91,28 +92,32 @@ public class videoChange : MonoBehaviour
     }
     public UnityEngine.Video.VideoAudioOutputMode audioOutputMode;
 
+    
     public void ButtonForward()
     {
+
+        Debug.Log("Button clicked");
         currentVideo++;
-        if (PlayerPrefs.GetString(currentVideo.ToString()) != "")
-        {
+      //  if (PlayerPrefs.GetString(currentVideo.ToString()) != "") {
             
             if (currentVideo == 1)
             {
                 BackButton.SetActive(true);
             }
+            Debug.Log("hi" + currentVideo.ToString());
             var videoPlayer = gameObject.GetComponent<VideoPlayer>();
-            stringToSave = PlayerPrefs.GetString(currentVideo.ToString());
-            videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, PlayerPrefs.GetString(currentVideo.ToString()));
+        //  stringToSave = PlayerPrefs.GetString(currentVideo.ToString());
+        videoPlayer.clip=videoInputs[0];
+   //     videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, videoNames[0].ToString());//PlayerPrefs.GetString(currentVideo.ToString()));
             if (currentVideo == clipNum-1)
             {
                 ForwardButton.SetActive(false);
             }
-        }
-        else
+       // }
+     /*   else
         {
             currentVideo--;
-        }
+        }*/
     }
     public void ButtonBackward()
     {
