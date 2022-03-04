@@ -7,29 +7,25 @@ public class backCollided : MonoBehaviour
     public Collider m_ObjectCollider;
     public GameObject sphere;
     bool exited = true;
+
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("back collided");
-        sphere.GetComponent<videoChange>().ButtonBackward();
         exited = false;
-        StartCoroutine(routine());
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
         exited = true;
     }
-    IEnumerator routine()
+    public void isColliding()
     {
-
-        yield return new WaitForSeconds(1f);
-
-    }   // Start is called before the first frame update
-        void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        Debug.Log("hi");
+        if (exited == false)
+        {
+            Debug.Log("exited is false");
+            sphere.GetComponent<videoChange>().ButtonBackward();
+        }
     }
 }
 

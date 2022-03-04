@@ -1113,7 +1113,6 @@ namespace Valve.VR.InteractionSystem
         //-------------------------------------------------
         protected virtual void Update()
         {
-            Debug.Log(grabPinchAction.GetStateDown(handType));
             if (grabPinchAction.GetStateDown(handType))
             {
                 Debug.Log("entered");

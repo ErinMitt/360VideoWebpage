@@ -12,31 +12,23 @@ public class buttonCollided : MonoBehaviour
 
 
 
-    private void OnTriggerEnter(Collider other){
+    private void OnTriggerEnter(Collider other)
+    {
         Debug.Log("dollided");
-        sphere.GetComponent<videoChange>().ButtonForward();
         exited = false;
-        StartCoroutine(routine());
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
         exited = true;
     }
-    IEnumerator routine()
+    public void isColliding()
     {
-      
-            yield return new WaitForSeconds(1f);
-       
-    }
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("hi");
+        if (exited == false)
+        {
+            Debug.Log("exited is false");
+            sphere.GetComponent<videoChange>().ButtonForward();
+        }
     }
 }

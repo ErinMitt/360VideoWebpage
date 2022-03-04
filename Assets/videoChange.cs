@@ -22,11 +22,11 @@ public class videoChange : MonoBehaviour
    // public Button clip;
    // public Button[] clipNames;
     public VideoClip[] videoInputs;
-    int clipNum;
+    int size;
     //public Button[] charButtons;
     public void Start()
     {
-
+         size = videoInputs.Length;
     }
    /*  public void Start()
       {
@@ -95,10 +95,11 @@ public class videoChange : MonoBehaviour
     
     public void ButtonForward()
     {
-
+  
         Debug.Log("Button clicked");
         currentVideo++;
-        if (videoInputs[currentVideo]) {
+        Debug.Log(currentVideo);
+        if (currentVideo<size) {
             
             if (currentVideo == 1)
             {
@@ -107,28 +108,45 @@ public class videoChange : MonoBehaviour
             var videoPlayer = gameObject.GetComponent<VideoPlayer>();
         //  stringToSave = PlayerPrefs.GetString(currentVideo.ToString());
         videoPlayer.clip=videoInputs[currentVideo];
-
         }
        else
         {
+
+            Debug.Log("else triggered");
             currentVideo--;
-            ForwardButton.SetActive(false);
+       //     ForwardButton.SetActive(false);
         }
     }
     public void ButtonBackward()
     {
-              if (currentVideo == 1)
-               {
-                   BackButton.SetActive(false);
-               }
         currentVideo--;
-        var videoPlayer = gameObject.GetComponent<VideoPlayer>();
-        //stringToSave = PlayerPrefs.GetString(currentVideo.ToString());
-        videoPlayer.clip = videoInputs[currentVideo];
-        if (currentVideo != clipNum-1)
+        Debug.Log(currentVideo);
+        if (currentVideo >= 0)
+        {
+            var videoPlayer = gameObject.GetComponent<VideoPlayer>();
+            //stringToSave = PlayerPrefs.GetString(currentVideo.ToString());
+            videoPlayer.clip =videoInputs[currentVideo];
+            if (currentVideo == 0)
+            {
+            //    BackButton.SetActive(false);
+            }
+
+            if (currentVideo == size - 2)
             {
                 ForwardButton.SetActive(true);
             }
+            if (currentVideo == size - 1)
+            {
+           //     ForwardButton.SetActive(false);
+            }
+
+        }
+        else
+        {
+            Debug.Log("else triggered");
+            currentVideo++;
+        }
+     
     }
   /*  public void DeleteButton()
     {

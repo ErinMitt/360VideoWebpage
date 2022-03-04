@@ -2349,6 +2349,7 @@ GameObject:
   - component: {fileID: 1017307010}
   - component: {fileID: 1017307011}
   - component: {fileID: 1017307013}
+  - component: {fileID: 1017307012}
   m_Layer: 0
   m_Name: Forward
   m_TagString: Untagged
@@ -2465,9 +2466,64 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
+--- !u!114 &1017307012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017307005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a9b39235339104889bf8e9178fc630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  booleanAction:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  inputSource: 2
+  onChange:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: buttonCollided, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPressDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1017307010}
+        m_TargetAssemblyTypeName: buttonCollided, Assembly-CSharp
+        m_MethodName: isColliding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPressUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!222 &1017307013
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3493,6 +3549,7 @@ GameObject:
   - component: {fileID: 1514487876}
   - component: {fileID: 1514487875}
   - component: {fileID: 1514487874}
+  - component: {fileID: 1514487881}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -3634,6 +3691,49 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514487872}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1514487881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514487872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a9b39235339104889bf8e9178fc630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  booleanAction:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  inputSource: 0
+  onChange:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onPressDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1514487874}
+        m_TargetAssemblyTypeName: backCollided, Assembly-CSharp
+        m_MethodName: isColliding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPressUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1580085233
 GameObject:
   m_ObjectHideFlags: 0
@@ -4011,10 +4111,10 @@ MonoBehaviour:
   ForwardButton: {fileID: 1017307005}
   BackButton: {fileID: 1514487872}
   videoInputs:
-  - {fileID: 32900000, guid: e87ee2442a000da47a14ca90074dcdf5, type: 3}
-  - {fileID: 32900000, guid: e87ee2442a000da47a14ca90074dcdf5, type: 3}
-  - {fileID: 32900000, guid: e87ee2442a000da47a14ca90074dcdf5, type: 3}
-  - {fileID: 32900000, guid: e87ee2442a000da47a14ca90074dcdf5, type: 3}
+  - {fileID: 32900000, guid: 382f5ae4b8dea824d99e120c80678897, type: 3}
+  - {fileID: 32900000, guid: b6997fd9178c0be48997f167aa4af34e, type: 3}
+  - {fileID: 32900000, guid: 2f03afc45193e8c4e9f5244226f01ac9, type: 3}
+  - {fileID: 32900000, guid: b9c90060da6d09d4abdbd4cd9fa96ec5, type: 3}
   audioOutputMode: 0
 --- !u!328 &1647360075
 VideoPlayer:
@@ -4083,7 +4183,7 @@ VideoPlayer:
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 0
-  m_WaitForFirstFrame: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!23 &1647360077
