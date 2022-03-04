@@ -9,12 +9,12 @@ public class buttonCollided : MonoBehaviour
     public Collider m_ObjectCollider;
     public GameObject sphere;
     bool exited = true;
-
+    public AudioSource buttonClick; 
 
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("dollided");
+        Debug.Log("collided");
         exited = false;
 
     }
@@ -24,10 +24,10 @@ public class buttonCollided : MonoBehaviour
     }
     public void isColliding()
     {
-        Debug.Log("hi");
+
         if (exited == false)
         {
-            Debug.Log("exited is false");
+            buttonClick.Play();
             sphere.GetComponent<videoChange>().ButtonForward();
         }
     }

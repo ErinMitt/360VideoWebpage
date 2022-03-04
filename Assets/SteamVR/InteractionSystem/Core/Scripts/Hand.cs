@@ -1115,7 +1115,6 @@ namespace Valve.VR.InteractionSystem
         {
             if (grabPinchAction.GetStateDown(handType))
             {
-                Debug.Log("entered");
               
               
              //   Debug.Log("exited");
